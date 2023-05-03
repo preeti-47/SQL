@@ -1,4 +1,4 @@
-----------once you create table you can modify by using modify 'alter' cmd not edit 😂
+----------once you create table you can modify by using  'alter' cmd not edit 😂
 select *from EMPLOYEE;
 SELECT * FROM DEPARTMENT;
 SELECT* from MANAGER;
