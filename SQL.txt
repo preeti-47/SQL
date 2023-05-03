@@ -1,0 +1,61 @@
+﻿Writing SQL queries is simple, but writing that in an efficient way will make you appear different in a data analyst interview. So here are some ways to write an efficient SQL query:-
+
+
+* Use SELECT statements to retrieve only the necessary data.
+
+
+* Use proper indexing to improve query performance.
+
+
+* Use UNION ALL instead of UNION if possible since UNION ALL doesn't remove duplicates.
+* Avoid using subqueries if possible, as they can slow down performance.
+
+
+* Use INNER JOIN instead of OUTER JOIN if you only need to retrieve matching records.
+* Avoid using wildcard characters in the beginning of LIKE clauses.
+
+
+* Use LIMIT or TOP to retrieve only a specific number of rows.
+
+
+* Use aggregate functions like SUM, AVG, and COUNT to perform calculations on large amounts of data.
+* Use GROUP BY to group data and improve query performance.
+
+
+* Use EXISTS instead of IN or NOT IN clauses, as EXISTS is typically faster.
+
+
+* Use a WHERE clause to filter data before retrieving it.
+
+
+* Use CASE statements to perform conditional logic.
+
+
+* Avoid using SELECT * to retrieve all columns when you only need a few columns.
+* Use stored procedures to reduce network traffic and improve performance.
+
+
+* Use views to simplify complex queries and reduce the amount of code needed.
+
+
+* Use subqueries in the FROM clause instead of in the WHERE clause.
+
+
+* Use table aliases to simplify query code and improve readability.
+
+
+* Use UNION instead of UNION ALL if you need to remove duplicates.
+
+
+* Avoid using functions in WHERE clauses, as they can slow down performance.
+
+
+* Use EXPLAIN to analyze query performance and identify bottlenecks.
+
+
+* Avoid using correlated subqueries if possible, as they can be slow.
+
+
+* Use proper data types to optimize query performance.
+* * Use stored procedures to reduce the number of round trips to the database.
+* * Use temp tables to reduce query complexity and improve performance.
