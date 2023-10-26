@@ -1,0 +1,42 @@
+create table tickets
+(
+ticket_id varchar(10),
+create_date date,
+resolved_date date
+);
+
+insert into tickets values
+(1,'2022-08-01','2022-08-03')
+,(2,'2022-08-01','2022-08-12')
+,(3,'2022-08-01','2022-08-16');
+create table holidays
+(
+holiday_date date
+,reason varchar(100)
+);
+
+insert into holidays values
+('2022-08-11','Rakhi'),('2022-08-15','Independence day');
+insert into holidays values
+('2022-08-14','Govt_holiday'); /*also a weekend */
+
+Solution:
+
+with cte as(
+
+select ticket_id, create_date, resolved_date, business_days,
+count(case when day_name in ("monday" ,"tuesday" ,"wednesday" ,"thursday" ,"friday") then 1 else null end) as reason
+from(
+select tickets.*, 
+ datediff(resolved_date, create_date) as total_days,
+ floor(datediff(resolved_date, create_date) / 7) as week_difference,
+ (datediff(resolved_date, create_date) - (floor(datediff(resolved_date, create_date) / 7) * 2)) as business_days,
+ reason,
+ dayname(holiday_date) as day_name
+
+ from tickets 
+ left join holidays on holiday_date between create_date and resolved_date) a 
+ group by 1,2,3,4
+)
+select ticket_id, create_date,resolved_date, (business_days-reason) as business_days
+from cte;
